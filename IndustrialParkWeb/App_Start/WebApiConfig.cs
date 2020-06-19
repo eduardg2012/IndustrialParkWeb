@@ -13,6 +13,8 @@ namespace IndustrialParkWeb
         public static void Register(HttpConfiguration config)
         {
             config.MapHttpAttributeRoutes();
+            config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(
+config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml"));
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

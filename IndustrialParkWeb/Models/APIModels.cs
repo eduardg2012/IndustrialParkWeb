@@ -10,11 +10,15 @@ namespace IndustrialParkWeb.Models
     public class Producto
     {
         [Key]
+        [ScaffoldColumn(false)]
         public int ID { get; set; }
         public string Codigo { get; set; }        
         public string Descripcion { get; set; }
         public string Imagen { get; set; }
         public decimal PrecioUnitario { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase UploadedFile { get; set; }
 
     }
 }

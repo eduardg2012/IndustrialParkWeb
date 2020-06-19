@@ -17,9 +17,26 @@ namespace IndustrialParkWeb.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Producto
-        public IQueryable<Producto> GetProductoes()
+        //public IQueryable<Producto> GetProductoes()
+        //{
+        //    return db.Productoes;             
+        //}
+
+        // GET: api/Producto
+        //[ResponseType(typeof(List<Producto>))]
+        public IHttpActionResult GetProductoes()
         {
-            return db.Productoes;
+
+            var posts = db.Productoes
+                           //.Where(p => p.Tags == "<sql-server>")
+                           .Select(p => new
+                           {
+                               Codigo = p.Codigo,
+                               Descripcion = p.Descripcion,
+                               Imagen = p.Imagen,
+                               PrecioUnitario = p.PrecioUnitario
+                           });
+            return Ok(posts);
         }
 
         // GET: api/Producto/5
