@@ -26,16 +26,20 @@ namespace IndustrialParkWeb.Controllers
         //[ResponseType(typeof(List<Producto>))]
         public IHttpActionResult GetProductoes()
         {
+            //var siteName = System.Web.Hosting.HostingEnvironment.SiteName;
+            //string ruta = System.Web.Hosting.HostingEnvironment.ApplicationVirtualPath;
+            String rutaImagenes = HelperUtil.ObtenerValorConfig("RutaImagenes").ToString();
             var posts = db.Productoes
                            //.Where(p => p.Tags == "<sql-server>")
                            .Select(p => new
                            {
-                               Codigo = p.Codigo,
-                               Descripcion = p.Descripcion,
-                               Imagen = p.Imagen,
-                               PrecioUnitario = p.PrecioUnitario
+                               code = p.Codigo,
+                               name = p.Descripcion,
+                               imageUrl = rutaImagenes + p.Imagen,
+                               price = p.PrecioUnitario
                            });
-            return Ok(posts);
+            var rpta = new { productList = posts };
+            return Ok(rpta);
         }
 
         // GET: api/Producto/5
