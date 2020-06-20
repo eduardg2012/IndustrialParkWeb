@@ -26,7 +26,6 @@ namespace IndustrialParkWeb.Controllers
         //[ResponseType(typeof(List<Producto>))]
         public IHttpActionResult GetProductoes()
         {
-
             var posts = db.Productoes
                            //.Where(p => p.Tags == "<sql-server>")
                            .Select(p => new

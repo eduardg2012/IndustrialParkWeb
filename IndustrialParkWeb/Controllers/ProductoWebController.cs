@@ -13,19 +13,19 @@ namespace IndustrialParkWeb.Controllers
         // GET: ProductoWeb
         public ActionResult Index()
         {
-            var posts = db.Productoes
+            var entidades = db.Productoes.ToList();
                            //.Where(p => p.Tags == "<sql-server>")
-                           .Select(p => new
-                           {
-                               Codigo = p.Codigo,
-                               Descripcion = p.Descripcion,
-                               Imagen = p.Imagen,
-                               PrecioUnitario = p.PrecioUnitario
-                           });
-
-            var listOfIdeas = (from x in db.Productoes select x.ID).ToList();
+                           //.Select(p => new Producto
+                           //{
+                           //    Codigo = p.Codigo,
+                           //    Descripcion = p.Descripcion,
+                           //    Imagen = p.Imagen,
+                           //    PrecioUnitario = p.PrecioUnitario
+                           //});
+                        
+            //var listOfIdeas = (from x in db.Productoes select x.ID).ToList();
             //return Ok(posts);
-            return View(posts);
+            return View(entidades);
         }
 
         // GET: ProductoWeb/Details/5
