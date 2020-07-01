@@ -6,7 +6,11 @@
 
 <h2>Crear</h2>
 
-
+<span class="text-danger">
+    <span class="">
+        @ViewBag.Error;
+    </span>
+</span>
 @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()

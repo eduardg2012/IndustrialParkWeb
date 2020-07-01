@@ -178,8 +178,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClienteWebController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PedidoController.cs" />
+    <Compile Include="Controllers\PedidoWebController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\ProductoWebController.cs" />
     <Compile Include="Global.asax.cs">
@@ -188,9 +191,11 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\APIModels.cs" />
+    <Compile Include="Models\ClienteModels.cs" />
     <Compile Include="Models\HelperUtil.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PedidoModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -206,6 +211,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\PerfilIndustrialParkWeb.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -255,6 +261,16 @@
     <Content Include="Views\ProductoWeb\Edit.cshtml" />
     <Content Include="Views\ProductoWeb\Delete.cshtml" />
     <Content Include="Views\ProductoWeb\Details.cshtml" />
+    <Content Include="Views\ClienteWeb\Create.cshtml" />
+    <Content Include="Views\ClienteWeb\Delete.cshtml" />
+    <Content Include="Views\ClienteWeb\Details.cshtml" />
+    <Content Include="Views\ClienteWeb\Edit.cshtml" />
+    <Content Include="Views\ClienteWeb\Index.cshtml" />
+    <Content Include="Views\PedidoWeb\Create.cshtml" />
+    <Content Include="Views\PedidoWeb\Delete.cshtml" />
+    <Content Include="Views\PedidoWeb\Details.cshtml" />
+    <Content Include="Views\PedidoWeb\Edit.cshtml" />
+    <Content Include="Views\PedidoWeb\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

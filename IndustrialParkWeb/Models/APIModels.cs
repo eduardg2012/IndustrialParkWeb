@@ -31,6 +31,7 @@ namespace IndustrialParkWeb.Models
 
         [NotMapped]
         //[Required(ErrorMessage = "*Requerido")]
+        //[MaxFileSize(8 * 1024 * 200, ErrorMessage = "Maximum allowed file size is {0} bytes")]
         public virtual HttpPostedFileBase UploadedFile { get; set; }
 
     }

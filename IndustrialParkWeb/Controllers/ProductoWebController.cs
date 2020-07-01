@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace IndustrialParkWeb.Controllers
 {
+    [Authorize]
     public class ProductoWebController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -59,7 +60,7 @@ namespace IndustrialParkWeb.Controllers
                     string path = System.IO.Path.Combine(
                                            Server.MapPath("~/Imagenes"), img);
                     entidad.UploadedFile.SaveAs(path);
-                    entidad.Imagen = System.IO.Path.Combine("\\Imagenes",img);
+                    entidad.Imagen = "/Imagenes/" + img;
                     db.Productoes.Add(entidad);
                     db.SaveChanges();
                 }
@@ -67,6 +68,7 @@ namespace IndustrialParkWeb.Controllers
             }
             catch(Exception ex)
             {
+                ViewBag.Error = ex.Message;
                 return View();
             }
         }
@@ -110,6 +112,7 @@ namespace IndustrialParkWeb.Controllers
             }
             catch(Exception ex)
             {
+                ViewBag.Error = ex.Message;
                 return View();
             }
         }

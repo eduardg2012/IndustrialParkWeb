@@ -32,5 +32,9 @@ namespace IndustrialParkWeb.Models
         }
 
         public System.Data.Entity.DbSet<IndustrialParkWeb.Models.Producto> Productoes { get; set; }
+
+        public System.Data.Entity.DbSet<IndustrialParkWeb.Models.Pedido> Pedidoes { get; set; }
+
+        public System.Data.Entity.DbSet<IndustrialParkWeb.Models.Cliente> Clientes { get; set; }
     }
 }
